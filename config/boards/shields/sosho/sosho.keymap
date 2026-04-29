@@ -41,6 +41,13 @@
             bindings = <&mkp LCLK>;
         };
 
+　　　　//左クリックのコンボ 15 D 16 F
+	    combo_LCLK {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&mkp LCLK>;
+        };
+
 		//右クリックのコンボ 20 K 21 L
         combo_RCLK {
             timeout-ms = <50>;
@@ -48,10 +55,24 @@
             bindings = <&mkp RCLK>;
         };
 
-		//ホイールクリックのコンボ 19 J 21 L
+		//右クリックのコンボ 14 S 16 F
+        combo_RCLK {
+            timeout-ms = <50>;
+            key-positions = <14 16>;
+            bindings = <&mkp RCLK>;
+        };
+	    
+        //ホイールクリックのコンボ 19 J 21 L
 	    combo_MCLK {
             timeout-ms = <90>;
             key-positions = <19 21>;
+            bindings = <&mkp MCLK>;
+        };
+
+		//ホイールクリックのコンボ 14 S 16 F
+	    combo_MCLK {
+            timeout-ms = <90>;
+            key-positions = <14 16>;
             bindings = <&mkp MCLK>;
         };
 
