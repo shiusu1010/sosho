@@ -98,7 +98,7 @@ keymap {
             &kp ESC    &kp LALT              &mo 2  &kp SPACE  &mo 1  &kp LA(GRAVE)              &mo 3     &kp LGUI
         >;
 		//&msc_ec_lとrは、上のビヘイビアで作ったもの。
-        sensor-bindings = <&msc_ec_l SCRL_LEFT SCRL_RIGHT &msc_ec_r SCRL_UP SCRL_DOWN>;
+        sensor-bindings = <&msc_ec_l SCRL_UP SCRL_DOWN &msc_ec_r SCRL_UP SCRL_DOWN>;
     };
 	
     layer_1 {
