@@ -57,10 +57,10 @@
             bindings = <&mkp RCLK>;
         };
 
-        //右クリックのコンボ 14 S 16 F
+        //右クリックのコンボ 14 S 15 F
         combo_RCLK_2 {
             timeout-ms = <50>;
-            key-positions = <14 16>;
+            key-positions = <14 15>;
             bindings = <&mkp RCLK>;
         };
 
