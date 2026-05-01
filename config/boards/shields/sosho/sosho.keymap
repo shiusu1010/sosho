@@ -129,13 +129,24 @@
                 &trans &trans               &trans &trans      &trans  &out OUT_BLE                                             &trans         &trans
             >;
         };
-        
+        // 修正箇所①：reservedを消して、すべて&trans（元のキーをそのまま通す）にする
         scroll {
-            status = "reserved";
+            bindings = <
+                &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
+                &trans &trans               &trans &trans      &trans &trans               &trans &trans
+            >;
         };
 
         extra2 {
             status = "reserved";
         };
     };
+};
+
+// 修正箇所②：ファイルの一番下にこれを追記！
+// トラックボールのスクロールレイヤーを「4」に指定する
+&trackball {
+    scroll-layers = <4>;
 };
