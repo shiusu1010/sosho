@@ -143,9 +143,9 @@
 
         layer_2 {
             bindings = <
-                &kp N &kp P  &kp K_BACK &kp UP &kp K_FORWARD &kp LC(T)    &kp EXCL  &kp N7  &kp N8  &kp N9 &kp RBKT  &kp BSLH
-                &kp M &kp H  &kp LEFT &kp DOWN &kp RIGHT &kp LC(W)        &kp MINUS &kp N4  &kp N5  &kp N6  &kp LBKT  &kp EQUAL
-                &kp COMMA &kp J &kp K &kp LC(C) &kp LC(V) &kp L          &kp N0    &kp N1  &kp N2  &kp N3  &kp UNDER &kp BSLH
+                &kp N &kp P  &kp K_BACK &kp UP &kp K_FORWARD &kp LC(LS(T))    &kp EXCL  &kp N7  &kp N8  &kp N9 &kp RBKT  &kp BSLH
+                &kp M &kp H  &kp LEFT &kp DOWN &kp RIGHT &kp LC(W)            &kp MINUS &kp N4  &kp N5  &kp N6  &kp LBKT  &kp EQUAL
+                &kp COMMA &kp J &kp K &kp LC(C) &kp LC(V) &kp L               &kp N0    &kp N1  &kp N2  &kp N3  &kp UNDER &kp BSLH
                 &kp DOT &kp SLASH                  &trans  &trans                &trans  &kp LSHFT                 &trans     &trans
             >;
         };
