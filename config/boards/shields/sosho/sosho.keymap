@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
+#include <input/processors.dtsi>
 
 / {
     behaviors {
@@ -169,8 +170,23 @@
             >;
         };
 
-        extra2 {
+   extra2 {
             status = "reserved";
         };
+    }; // ← ★これが keymap を閉じる括弧です！
+}; // ← ★これが一番上の / (ルート) を閉じる括弧です！
+
+// 括弧がすべて閉じた後の、本当に一番下に追記します
+&trackball_listener {
+    scroller {
+        layers = <4>; // ★ここをスクロールさせたいレイヤー番号に変更してください
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+};
+
+&trackball_split_listener {
+    scroller {
+        layers = <4>; // ★ここも同じレイヤー番号に変更してください
+        input-processors = <&zip_xy_to_scroll_mapper>;
     };
 };
