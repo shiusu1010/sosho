@@ -179,14 +179,15 @@
 // 括弧がすべて閉じた後の、本当に一番下に追記します
 &trackball_listener {
     scroller {
-        layers = <4>; // ★ここをスクロールさせたいレイヤー番号に変更してください
-        input-processors = <&zip_xy_to_scroll_mapper>;
+        layers = <4>;
+        // 移動をスクロールに変換した後、速度を「1/2」にスケーリングする
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 4>;
     };
 };
 
 &trackball_split_listener {
     scroller {
-        layers = <4>; // ★ここも同じレイヤー番号に変更してください
-        input-processors = <&zip_xy_to_scroll_mapper>;
+        layers = <4>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 4>;
     };
 };
