@@ -181,13 +181,13 @@
     scroller {
         layers = <4>;
         // 移動をスクロールに変換した後、速度を「1/2」にスケーリングする
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 4>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 8>;
     };
 };
 
 &trackball_split_listener {
     scroller {
         layers = <4>;
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 4>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 8>;
     };
 };
