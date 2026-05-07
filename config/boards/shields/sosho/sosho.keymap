@@ -136,19 +136,19 @@
     
         layer_1 {
             bindings = <
-                &kp GRAVE &kp N1  &kp N2  &kp UP  &kp N4  &kp N5       &kp N6    &kp KP_N5    &kp KP_N8   &kp N9    &kp N0 &kp DEL
+                &kp GRAVE &kp N1  &kp N2  &kp UP  &kp N4  &kp N5       &kp N6    &kp KP_N5    &kp KP_N8   &kp N9    &kp N0 &kp BSPC
                 &trans  &trans &kp LEFT &kp DOWN &kp RIGHT &trans      &kp PG_UP &kp KP_N4  &kp KP_N2   &kp KP_N6   &trans &trans
                 &trans    &trans &trans &trans &trans &trans           &kp PG_DN &kp LEFT  &kp HOME &kp END &trans &trans
-                &trans    &trans               &trans &trans           &kp LG(LS(S))    &trans                       &trans &trans
+                &trans    &trans               &trans &trans           &kp LA(LS(KP_NLCK))    &trans                       &trans &trans
             >;
         };
 
         layer_2 {
             bindings = <
-                &kp DEL &kp P  &mkp MB4 &kp UP &mkp MB5 &kp LC(LS(T))    &kp EXCL  &kp N7  &kp N8  &kp N9 &kp RBKT  &kp BSLH
-                &kp M &kp H  &kp LEFT &kp DOWN &kp RIGHT &kp LC(W)            &kp MINUS &kp N4  &kp N5  &kp N6  &kp LBKT  &kp EQUAL
-                &kp COMMA &kp J &kp K &kp LC(C) &kp LC(V) &kp L               &kp N0    &kp N1  &kp N2  &kp N3  &kp UNDER &kp BSLH
-                &kp DOT &kp SLASH                  &trans  &kp N              &kp LA(LS(KP_NLCK))  &kp LSHFT                 &trans     &trans
+                &kp DEL &kp P  &mkp MB4 &kp UP &mkp MB5 &kp LC(LS(T))    &kp EXCL  &kp N7  &kp N8  &kp N9 &kp RBKT   &kp BSPC
+                &kp M &kp H  &kp LEFT &kp DOWN &kp RIGHT &kp LC(W)       &kp MINUS &kp N4  &kp N5  &kp N6  &kp LBKT  &kp EQUAL
+                &kp COMMA &kp J &kp K &kp LC(C) &kp LC(V) &kp L          &kp N0    &kp N1  &kp N2  &kp N3  &kp UNDER &kp BSLH
+                &kp DOT &kp SLASH                  &trans  &kp N         &kp LA(LS(KP_NLCK))  &kp LSHFT         &trans     &trans
             >;
         };
 
