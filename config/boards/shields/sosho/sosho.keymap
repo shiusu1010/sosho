@@ -109,6 +109,20 @@
             bindings = <&kp O>;
         };
 
+        // 2番と3番のキー同時押しで「0」を入力するコンボ
+        combo_0 {
+            timeout-ms = <90>;
+            key-positions = <2 3>;
+            bindings = <&kp N0>;
+        };
+          // 25番と26番のキー同時押しで「1」を入力するコンボ
+        combo_1 {
+            timeout-ms = <90>;
+            key-positions = <25 26>;
+            bindings = <&kp N1>;
+        };
+
+
         //作ったけど消した。ポインティングデバイスをスクロールにしたい人向け
         //31 M 32 ,
         combo_SCROLL {
