@@ -121,7 +121,7 @@
             key-positions = <26 27>;
             bindings = <&kp N1>;
         };
-        // 25番と26番のキー同時押しで「3」を入力するコンボ
+        // 25番と26番のキー同時押しで「2」を入力するコンボ
         combo_2 {
             timeout-ms = <90>;
             key-positions = <25 26>;
