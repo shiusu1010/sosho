@@ -115,12 +115,19 @@
             key-positions = <2 3>;
             bindings = <&kp N0>;
         };
-          // 25番と26番のキー同時押しで「1」を入力するコンボ
+          // 26番と27番のキー同時押しで「1」を入力するコンボ
         combo_1 {
             timeout-ms = <90>;
-            key-positions = <25 26>;
+            key-positions = <26 27>;
             bindings = <&kp N1>;
         };
+        // 25番と26番のキー同時押しで「3」を入力するコンボ
+        combo_2 {
+            timeout-ms = <90>;
+            key-positions = <25 26>;
+            bindings = <&kp N2>;
+        };
+
 
 
         //作ったけど消した。ポインティングデバイスをスクロールにしたい人向け
