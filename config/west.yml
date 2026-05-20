@@ -6,18 +6,17 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    # ▼ ピースケさんのフォークしたリポジトリを参照 ▼
     - name: shiusu1010
       url-base: https://github.com/shiusu1010
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # ▼ ここを main から v0.1 に変更！ ▼
+      revision: v0.1
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    # ▼ 画面モジュールをピースケさんのリポジトリから取得 ▼
     - name: zmk-dongle-screen
       remote: shiusu1010
       revision: main
