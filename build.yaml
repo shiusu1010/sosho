@@ -1,31 +1,31 @@
 include:
   # ドングル（Prospector）用
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble@zmk
     shield: sosho_dongle
   
   # 左手側（トラックボール版） - 子機に設定
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble@zmk
     shield: sosho_L_trackball
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # 左手側（トラックパッド版） - 子機に設定
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble@zmk
     shield: sosho_L_trackpad
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # 右手側（トラックボール版） - 子機に設定
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble@zmk
     shield: sosho_R_trackball
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # 右手側（トラックパッド版） - 子機に設定
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble@zmk
     shield: sosho_R_trackpad
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # ==============================
   # 設定リセット用
   # ==============================
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble@zmk
     shield: settings_reset
     artifact-name: settings_reset
