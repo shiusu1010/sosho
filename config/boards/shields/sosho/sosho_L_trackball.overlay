@@ -1,24 +1,17 @@
 #include "sosho_L.dtsi"
 
-&spi1 { status = "okay"; };
+&spi1 {
+    status = "okay";
+};
 
 &trackball {
     status = "okay";
 };
 
-/* 子機（左手）の役割はセンサーをSplitチャネルに渡すことだけです */
+/* センサーのデータをSplit（送信）チャネルに流し込みます */
+/* reg = <1> にすることで、ドングルの trackball_split@1 と完全に紐付きます */
 &trackball_split {
     status = "okay";
     device = <&trackball>;
+    reg = <1>;
 };
-
-/* 以下のリスナーは子機には不要なので削除します */
-/*
-&trackball_listener {
-    status = "okay";
-};
-
-&trackball_split_listener {
-    status = "okay";
-};
-*/

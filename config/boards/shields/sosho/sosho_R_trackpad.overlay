@@ -1,16 +1,18 @@
 #include "sosho_R.dtsi"
 
-&spi0 { status = "okay"; };
+&spi0 {
+    status = "okay";
+};
 
 &glidepoint {
     status = "okay";
     invert-y;
 };
 
-/* ここが重要：センサーのデータをSplit（送信）チャネルに流し込みます */
+/* センサーのデータをSplit（送信）チャネルに流し込みます */
+/* reg = <0> にすることで、ドングルの glidepoint_split@0 と完全に紐付きます */
 &glidepoint_split {
     status = "okay";
     device = <&glidepoint>;
+    reg = <0>;
 };
-
-/* ※ リスナー（_listener）は書かなくてOKです！ */
