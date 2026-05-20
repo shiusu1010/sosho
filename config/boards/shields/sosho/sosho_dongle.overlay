@@ -31,6 +31,7 @@
 /* ルート (/) の外に出して、既存の &kscan0 を上書きします */
 &kscan0 {
     compatible = "zmk,kscan-mock";
+    /delete-property/ wakeup-source;
     columns = <0>;
     rows = <0>;
     events = <0>;
