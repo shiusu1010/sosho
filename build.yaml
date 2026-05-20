@@ -8,41 +8,20 @@ include:
     shield: sosho_L_trackball
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-<<<<<<< HEAD
   # 左手側（トラックパッド版） - 子機に設定
   - board: xiao_ble/nrf52840/zmk
     shield: sosho_L_trackpad
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-=======
-  # 左手側（トラックパッド版） - 子機に設定
-  - board: nice_nano_v2
-    shield: sosho_L_trackpad
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
->>>>>>> fa132190692389bc6ef6ad18a07cb3e1d72e091a
 
-<<<<<<< HEAD
   # 右手側（トラックボール版） - 子機に設定
   - board: xiao_ble/nrf52840/zmk
     shield: sosho_R_trackball
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-=======
-  # 右手側（トラックボール版） - 子機に設定
-  - board: nice_nano_v2
-    shield: sosho_R_trackball
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
->>>>>>> fa132190692389bc6ef6ad18a07cb3e1d72e091a
 
-<<<<<<< HEAD
   # 右手側（トラックパッド版） - 子機に設定
   - board: xiao_ble/nrf52840/zmk
     shield: sosho_R_trackpad
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-=======
-  # 右手側（トラックパッド版） - 子機に設定
-  - board: nice_nano_v2
-    shield: sosho_R_trackpad
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
->>>>>>> fa132190692389bc6ef6ad18a07cb3e1d72e091a
 
   # ==============================
   # 設定リセット用
@@ -50,4 +29,3 @@ include:
   - board: xiao_ble/nrf52840/zmk
     shield: settings_reset
     artifact-name: settings_reset
-  # ==============================
