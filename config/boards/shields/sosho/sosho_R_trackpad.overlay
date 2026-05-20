@@ -6,3 +6,11 @@
     status = "okay";
     invert-y;
 };
+
+/* ここが重要：センサーのデータをSplit（送信）チャネルに流し込みます */
+&glidepoint_split {
+    status = "okay";
+    device = <&glidepoint>;
+};
+
+/* ※ リスナー（_listener）は書かなくてOKです！ */

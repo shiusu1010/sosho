@@ -6,15 +6,19 @@
     status = "okay";
 };
 
-&trackball_listener {
-    status = "okay";
-};
-
+/* 子機（左手）の役割はセンサーをSplitチャネルに渡すことだけです */
 &trackball_split {
     status = "okay";
     device = <&trackball>;
 };
 
+/* 以下のリスナーは子機には不要なので削除します */
+/*
+&trackball_listener {
+    status = "okay";
+};
+
 &trackball_split_listener {
     status = "okay";
 };
+*/
