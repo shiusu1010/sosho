@@ -6,6 +6,10 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    # ▼ ここから追加 ▼
+    - name: bwshockley
+      url-base: https://github.com/bwshockley
+    # ▲ ここまで追加 ▲
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -14,5 +18,10 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+    # ▼ ここから追加 ▼
+    - name: zmk-dongle-screen
+      remote: bwshockley
+      revision: main
+    # ▲ ここまで追加 ▲
   self:
     path: config
