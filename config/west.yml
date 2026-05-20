@@ -6,10 +6,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    # ▼ ここから追加 ▼
-    - name: bwshockley
-      url-base: https://github.com/bwshockley
-    # ▲ ここまで追加 ▲
+    # ▼ ピースケさんのフォークしたリポジトリを参照 ▼
+    - name: shiusu1010
+      url-base: https://github.com/shiusu1010
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,10 +17,9 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    # ▼ ここから追加 ▼
+    # ▼ 画面モジュールをピースケさんのリポジトリから取得 ▼
     - name: zmk-dongle-screen
-      remote: bwshockley
+      remote: shiusu1010
       revision: main
-    # ▲ ここまで追加 ▲
   self:
     path: config
