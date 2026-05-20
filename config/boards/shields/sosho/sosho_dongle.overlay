@@ -5,7 +5,11 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
+        zephyr,display = &st7789;
+        zephyr,code-partition = &code_partition; /* 必要に応じて追加 */
     };
+
+    /* (省略：default_transformとphysical_layout0はそのまま残してください) */
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -34,4 +38,55 @@
     columns = <0>;
     rows = <0>;
     events = <0>;
+};
+
+/* ▼ I2Cの設定 (タッチパネル用) ▼ */
+&i2c0 {
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    
+    /* 画像の4/SDA, 5/SCL に対応 */
+    /* ※XIAOのI2Cピンは通常D4, D5固定です */
+};
+
+/* ▼ SPIの設定 (画面用) ▼ */
+&spi2 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi2_default>;
+    pinctrl-1 = <&spi2_sleep>;
+    pinctrl-names = "default", "sleep";
+    
+    cs-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>; /* 7ピンをCSに設定 */
+
+    st7789: st7789@0 {
+        compatible = "sitronix,st7789v";
+        status = "okay";
+        spi-max-frequency = <20000000>;
+        reg = <0>;
+        width = <240>;
+        height = <280>;
+        dc-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;    /* 6/DC */
+        reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;  /* 3/RST */
+        bl-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;    /* 2/BL */
+    };
+};
+
+&pinctrl {
+    /* SPIピン (画像通り) */
+    spi2_default: spi2_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 9)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
+        };
+    };
+    /* I2Cピン (画像通り) */
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 5)>;
+        };
+    };
 };
