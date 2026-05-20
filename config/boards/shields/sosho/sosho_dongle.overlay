@@ -7,7 +7,6 @@
         zmk,physical-layout = &physical_layout0;
     };
 
-    /* ▼▼ SO-SHOのマトリックス変換 ▼▼ */
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -20,7 +19,6 @@
         >;
     };
 
-    // YADSなどの画面モジュールを正しく動作させるための物理レイアウト設定
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
@@ -28,10 +26,11 @@
     };
 };
 
-/* ルート (/) の外に出して、既存の &kscan0 を上書きします */
 &kscan0 {
     compatible = "zmk,kscan-mock";
     /delete-property/ wakeup-source;
+    /delete-property/ diode-direction;
+    /delete-property/ row-gpios;
     columns = <0>;
     rows = <0>;
     events = <0>;

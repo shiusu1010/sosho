@@ -6,12 +6,3 @@
     status = "okay";
     invert-y;
 };
-
-&glidepoint_split {
-    status = "okay";
-    device = <&glidepoint>;
-};
-
-&trackball_split {
-    status = "okay";
-};
