@@ -1,13 +1,15 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "sosho.dtsi"   /* ←★この1行を追記するだけ！★ */
+#include "sosho.dtsi"
 
 / {
     chosen {
-        zmk,kscan = &mock_kscan;
+        /* 元のkscan0を上書きするように指定します */
+        zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
     };
 
-    mock_kscan: mock_kscan_0 {
+    /* kscan0という名前に変更し、内容を上書きします */
+    kscan0: kscan_mock {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
