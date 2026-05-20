@@ -3,17 +3,8 @@
 
 / {
     chosen {
-        /* 元のkscan0を上書きするように指定します */
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
-    };
-
-    /* kscan0という名前に変更し、内容を上書きします */
-    kscan0: kscan_mock {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
     };
 
     /* ▼▼ SO-SHOのマトリックス変換 ▼▼ */
@@ -35,4 +26,12 @@
         display-name = "Default Layout";
         transform = <&default_transform>;
     };
+};
+
+/* ルート (/) の外に出して、既存の &kscan0 を上書きします */
+&kscan0 {
+    compatible = "zmk,kscan-mock";
+    columns = <0>;
+    rows = <0>;
+    events = <0>;
 };

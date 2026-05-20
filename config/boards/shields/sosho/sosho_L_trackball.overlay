@@ -1,8 +1,20 @@
 #include "sosho_L.dtsi"
 
 &spi1 { status = "okay"; };
-&trackball{ status = "okay"; };
-&trackball_split{
+
+&trackball {
+    status = "okay";
+};
+
+&trackball_listener {
+    status = "okay";
+};
+
+&trackball_split {
     status = "okay";
     device = <&trackball>;
+};
+
+&trackball_split_listener {
+    status = "okay";
 };
