@@ -1,8 +1,7 @@
 include:
-  # ドングル用
-  # 後ろに付けた prospector_adapter を削除し、Sosho本来の画面構成に戻します
+  # ドングル用（Soshoの設定に、Prospectorの画面アダプターを合体！）
   - board: xiao_ble/nrf52840/zmk
-    shield: sosho_dongle
+    shield: sosho_dongle prospector_adapter
   
   # 左手側（トラックボール版） - 子機に設定
   - board: xiao_ble/nrf52840/zmk

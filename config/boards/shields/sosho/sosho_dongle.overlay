@@ -6,17 +6,10 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
-        zephyr,display = &st7789;
-        /* ▼ 最新ルールに従い、バックライトの行き先をここに登録しました */
-        zephyr,backlight = &backlight;
+        /* 画面の登録はプラグイン側が自動で行うため、ここからは削除しました */
     };
 
-    /* ▼ 最新ルールに合わせて、バックライト専用のノードを独立して作成 */
-    backlight: backlight {
-        compatible = "gpio-backlight";
-        gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-    };
-
+    /* ▼ 左右からの入力受け取り設定（トラックパッド＆トラックボール用） ▼ */
     split_inputs {
         compatible = "zmk,split-inputs";
         status = "okay";
@@ -32,6 +25,7 @@
         };
     };
 
+    /* 入力リスナー設定 (ドングルでデータを処理する) */
     glidepoint_split_listener {
         compatible = "zmk,input-listener";
         status = "okay";
@@ -61,41 +55,6 @@
         display-name = "Default Layout";
         transform = <&default_transform>;
     };
-
-    mipi_dbi {
-        compatible = "zephyr,mipi-dbi-spi";
-        spi-dev = <&spi2>;
-        dc-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
-        /* ▼ 修正: reset-gpios を最新ルールの通り、この親ノードへ引っ越しさせました */
-        reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        st7789: st7789@0 {
-            compatible = "sitronix,st7789v";
-            reg = <0>;
-            mipi-max-frequency = <20000000>;
-            mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
-            width = <240>;
-            height = <280>;
-            x-offset = <0>;
-            y-offset = <0>;
-            vcom = <0x1c>;
-            gctrl = <0x35>;
-            mdac = <0x00>;
-            lcm = <0x2c>;
-            gamma = <1>;
-            cmd2en-param = [5a 69 02 b2];
-            pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
-            nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
-            ram-param = [00 f0];
-            rgb-param = [cd 08 14];
-            pwctrl1-param = [a4 a1];
-            porch-param = [0c 0c 00 33 33];
-            colmod = <0x05>;
-            /* ※ reset-gpios と bl-gpios は競合回避のためここから綺麗に除去しました */
-        };
-    };
 };
 
 &kscan0 {
@@ -108,27 +67,6 @@
     events = <0>;
 };
 
-&spi2 {
-    status = "okay";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi2_default>;
-    pinctrl-1 = <&spi2_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
-};
-
-&pinctrl {
-    spi2_default: spi2_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 9)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
-        };
-    };
-    spi2_sleep: spi2_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 9)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
-            low-power-enable;
-        };
-    };
-};
+/* * 画面に関する記述はすべて綺麗に削除しました。
+ * Prospector専用の正しいピン配置は、すべて合体させたプラグインが自動制御します！
+ */
