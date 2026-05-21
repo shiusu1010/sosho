@@ -1,12 +1,11 @@
 #include "sosho_L.dtsi"
 
-/* 物理的な通信バス（SPI）を有効化 */
+/* トラックパッド用のSPI0通信をONにするだけ！これだけで自動で電波に乗ります */
 &spi0 {
     status = "okay";
 };
 
-/* 物理的なトラックパッド（Glidepoint）の動作設定 */
 &glidepoint {
     status = "okay";
-    invert-x; /* ピースケさんのお好みの設定（X軸反転）に合わせて残してあります */
+    invert-x;
 };

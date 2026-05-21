@@ -1,20 +1,10 @@
 #include "sosho_R.dtsi"
 
-/* 物理的な通信バス（SPI）を有効化 */
 &spi0 {
     status = "okay";
 };
 
-/* 物理的なトラックパッド（Glidepoint）の動作設定 */
 &glidepoint {
     status = "okay";
     invert-y;
-};
-
-/* ▼ 最新ZMK仕様：トラックパッドの入力を電波に乗せるための翻訳機 ▼ */
-/ {
-    glidepoint_listener {
-        compatible = "zmk,input-listener";
-        device = <&glidepoint>;
-    };
 };

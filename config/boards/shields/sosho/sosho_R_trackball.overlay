@@ -1,6 +1,8 @@
 #include "sosho_R.dtsi"
 
-&spi1 { status = "okay"; };
+&spi1 {
+    status = "okay";
+};
 
 &trackball {
     status = "okay";
