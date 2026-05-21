@@ -73,9 +73,10 @@
             gctrl = <0x35>;
             mdac = <0x00>;
             lcm = <0x2c>;
-            
-            /* ▼ gamset から 最新仕様の gamma に修正しました */
             gamma = <1>;
+            
+            /* ▼ 新しく要求された必須パラメータを追加しました */
+            cmd2en-param = [5a 69 02 b2];
             
             ram-param = [00 f0];
             rgb-param = [cd 08 14];
