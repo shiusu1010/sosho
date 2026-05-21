@@ -74,9 +74,11 @@
             mdac = <0x00>;
             lcm = <0x2c>;
             gamma = <1>;
-            
-            /* ▼ 新しく要求された必須パラメータを追加しました */
             cmd2en-param = [5a 69 02 b2];
+            
+            /* ▼ 新しく要求された必須のガンマ設定（正・負）をセットで追加しました */
+            pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
+            nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
             
             ram-param = [00 f0];
             rgb-param = [cd 08 14];
