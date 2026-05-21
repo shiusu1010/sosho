@@ -9,7 +9,7 @@
         zephyr,display = &st7789;
     };
 
-    /* ▼ 左右からの入力受け取り設定（ここはそのまま維持） ▼ */
+    /* ▼ 左右からの入力受け取り設定 ▼ */
     split_inputs {
         compatible = "zmk,split-inputs";
         status = "okay";
@@ -56,20 +56,25 @@
         transform = <&default_transform>;
     };
 
-    /* ▼【修正】最新のZephyr 4.1に対応した MIPI-DBI 仮想バスの設定 ▼ */
+    /* ▼ MIPI-DBI 仮想バスの設定 ▼ */
     mipi_dbi {
         compatible = "zephyr,mipi-dbi-spi";
         spi-dev = <&spi2>;
-        dc-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>; /* dc-gpiosはここが引き受けます */
+        dc-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
         #address-cells = <1>;
         #size-cells = <0>;
 
         st7789: st7789@0 {
             compatible = "sitronix,st7789v";
             reg = <0>;
-            mipi-max-frequency = <20000000>; /* 名前が変更されました */
+            mipi-max-frequency = <20000000>;
             width = <240>;
             height = <280>;
+            
+            # ▼【修正】最新ZMKで必須となったオフセット設定を追加しました
+            x-offset = <0>;
+            y-offset = <0>;
+            
             reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
             bl-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
             pwctrl1-param = [a4 a1];
@@ -89,7 +94,7 @@
     events = <0>;
 };
 
-/* ▼【修正】SPI本体の設定（画面子ノードとdc-gpiosを上記へ分離しました） ▼ */
+/* ▼ SPI本体の設定 ▼ */
 &spi2 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -99,7 +104,7 @@
     cs-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
 };
 
-/* ▼ ピン定義（ここはそのまま維持） ▼ */
+/* ▼ ピン定義 ▼ */
 &pinctrl {
     spi2_default: spi2_default {
         group1 {
