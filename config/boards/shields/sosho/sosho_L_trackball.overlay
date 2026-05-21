@@ -1,17 +1,19 @@
 #include "sosho_L.dtsi"
 
-&spi1 {
+/* 物理的な通信バス（SPI）を有効化 */
+&spi0 {
     status = "okay";
 };
 
+/* 物理的なトラックボール（PMW3610）の動作設定 */
 &trackball {
     status = "okay";
 };
 
-/* センサーのデータをSplit（送信）チャネルに流し込みます */
-/* reg = <1> にすることで、ドングルの trackball_split@1 と完全に紐付きます */
-&trackball_split {
-    status = "okay";
-    device = <&trackball>;
-    reg = <1>;
+/* ▼ 最新ZMK仕様：トラックボールの入力を電波に乗せるための翻訳機 ▼ */
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };

@@ -10,3 +10,11 @@
     status = "okay";
     invert-y;
 };
+
+/* ▼ 最新ZMK仕様：トラックパッドの入力を電波に乗せるための翻訳機 ▼ */
+/ {
+    glidepoint_listener {
+        compatible = "zmk,input-listener";
+        device = <&glidepoint>;
+    };
+};
