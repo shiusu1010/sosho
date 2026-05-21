@@ -69,6 +69,7 @@
             height = <280>;
             x-offset = <0>;
             y-offset = <0>;
+            vcom = <0x1c>;
             reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
             bl-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
             pwctrl1-param = [a4 a1];
