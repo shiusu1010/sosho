@@ -8,6 +8,9 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: shiusu1010
       url-base: https://github.com/shiusu1010
+    # ▼ 大元のProspector配布元を再登録します
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,9 +22,9 @@ manifest:
     - name: zmk-dongle-screen
       remote: shiusu1010
       revision: main
-    # ▼ 追加：バグを修正したピースケさん専用のProspectorモジュールを読み込みます
+    # ▼ 読み込み先を大元に戻し、ブランチを最新の「feat/new-status-screens」に指定します
     - name: prospector-zmk-module
-      remote: shiusu1010
-      revision: main
+      remote: carrefinho
+      revision: feat/new-status-screens
   self:
     path: config
