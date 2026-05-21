@@ -66,8 +66,8 @@
             reg = <0>;
             mipi-max-frequency = <20000000>;
             
-            /* ▼ 修正: 文字列（"SPI_4WIRE"）として正しく定義しました */
-            mipi-mode = "SPI_4WIRE";
+            /* ▼ 修正: 最新仕様のフルネーム文字列に修正しました */
+            mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
             
             width = <240>;
             height = <280>;
