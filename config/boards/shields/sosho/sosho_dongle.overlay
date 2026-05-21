@@ -1,7 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/input_transform.h>
-/* ▼ 通信モードのマクロを読み込むためにこの1行を追加しました */
-#include <dt-bindings/mipi_dbi/mipi_dbi.h>
 #include "sosho.dtsi"
 
 / {
@@ -68,8 +66,8 @@
             reg = <0>;
             mipi-max-frequency = <20000000>;
             
-            /* ▼ 新しく要求された必須の通信モード設定を追加しました */
-            mipi-mode = <MIPI_DBI_MODE_SPI_4WIRE>;
+            /* ▼ 修正: 文字列（"SPI_4WIRE"）として正しく定義しました */
+            mipi-mode = "SPI_4WIRE";
             
             width = <240>;
             height = <280>;
