@@ -6,10 +6,9 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
-        /* 画面の登録はプラグイン側が自動で行うため、ここからは削除しました */
     };
 
-    /* ▼ 左右からの入力受け取り設定（トラックパッド＆トラックボール用） ▼ */
+    /* ▼ 左右からの入力受け取り設定 ▼ */
     split_inputs {
         compatible = "zmk,split-inputs";
         status = "okay";
@@ -66,7 +65,3 @@
     rows = <0>;
     events = <0>;
 };
-
-/* * 画面に関する記述はすべて綺麗に削除しました。
- * Prospector専用の正しいピン配置は、すべて合体させたプラグインが自動制御します！
- */

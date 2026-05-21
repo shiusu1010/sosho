@@ -1,31 +1,31 @@
 include:
-  # ドングル用（Soshoの設定に、Prospectorの画面アダプターを合体！）
-  - board: xiao_ble/nrf52840/zmk
+  # ドングル用（古いボード指定 xiao_ble に戻して合体！）
+  - board: xiao_ble
     shield: sosho_dongle prospector_adapter
   
   # 左手側（トラックボール版） - 子機に設定
-  - board: xiao_ble/nrf52840/zmk
+  - board: xiao_ble
     shield: sosho_L_trackball
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # 左手側（トラックパッド版） - 子機に設定
-  - board: xiao_ble/nrf52840/zmk
+  - board: xiao_ble
     shield: sosho_L_trackpad
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # 右手側（トラックボール版） - 子機に設定
-  - board: xiao_ble/nrf52840/zmk
+  - board: xiao_ble
     shield: sosho_R_trackball
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # 右手側（トラックパッド版） - 子機に設定
-  - board: xiao_ble/nrf52840/zmk
+  - board: xiao_ble
     shield: sosho_R_trackpad
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # ==============================
   # 設定リセット用
   # ==============================
-  - board: xiao_ble/nrf52840/zmk
+  - board: xiao_ble
     shield: settings_reset
     artifact-name: settings_reset
