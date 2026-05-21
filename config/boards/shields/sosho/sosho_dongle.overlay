@@ -70,6 +70,15 @@
             x-offset = <0>;
             y-offset = <0>;
             vcom = <0x1c>;
+            
+            /* ▼ 最新ZMKで要求されるパラメータを先回りして一斉補給 */
+            gctrl = <0x35>;
+            mdac = <0x00>;
+            lcm = <0x2c>;
+            gamset = <0x01>;
+            ram-param = [00 f0];
+            rgb-param = [cd 08 14];
+            
             reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
             bl-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
             pwctrl1-param = [a4 a1];
