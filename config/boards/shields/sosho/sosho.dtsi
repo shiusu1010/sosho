@@ -64,6 +64,49 @@
         triggers-per-rotation = <24>;
     };
 
+    /* 無線データ受信用の中継ノード群 */
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            status = "disabled";
+        };
+
+        trackball_split: trackball_split@1 {
+            compatible = "zmk,input-split";
+            reg = <1>;
+            status = "disabled";
+        };
+    };
+
+    /* キーマップが裏で呼び出している4つのリスナーノードのベース定義 */
+    glidepoint_split_listener: glidepoint_split_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&glidepoint_split>;
+    };
+
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&glidepoint>;
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball>;
+    };
+
+    trackball_split_listener: trackball_split_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball_split>;
+    };
+
     /* zmk-rgbled-widgetのおまじない */
     aliases {
         led-red = &led0;

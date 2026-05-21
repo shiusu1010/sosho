@@ -35,3 +35,21 @@
     rows = <0>;
     events = <0>;
 };
+
+/* ========================================================================
+ * ドングル（親機）側：子機から飛んでくる無線の受け口をONにし、
+ * キーマップのリスナーを物理から「無線受け口」にリダイレクトして合体させます！
+ * ======================================================================== */
+
+&glidepoint_split { status = "okay"; };
+&trackball_split  { status = "okay"; };
+
+&glidepoint_listener {
+    status = "okay";
+    device = <&glidepoint_split>; /* 物理の代わりに無線ノードを操作対象にする */
+};
+
+&trackball_listener {
+    status = "okay";
+    device = <&trackball_split>; /* 物理の代わりに無線ノードを操作対象にする */
+};

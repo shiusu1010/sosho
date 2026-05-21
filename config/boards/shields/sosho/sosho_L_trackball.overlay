@@ -1,10 +1,16 @@
 #include "sosho_L.dtsi"
 
-/* トラックボール用のSPI1通信をONにするだけ！これだけで自動で電波に乗ります */
+/* トラックボール用のSPI1通信と物理センサーを有効化 */
 &spi1 {
     status = "okay";
 };
 
 &trackball {
     status = "okay";
+};
+
+/* 物理センサーのデータを、dtsiにある無線送信チャネル（reg=1）にカチッと接続してON！ */
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
 };
