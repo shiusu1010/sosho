@@ -9,7 +9,7 @@
         zephyr,display = &st7789;
     };
 
-    /* ▼ 左右からの入力受け取り設定 ▼ */
+    /* ▼ 左右からの入力受け取り設定（ここはそのまま維持） ▼ */
     split_inputs {
         compatible = "zmk,split-inputs";
         status = "okay";
@@ -55,6 +55,28 @@
         display-name = "Default Layout";
         transform = <&default_transform>;
     };
+
+    /* ▼【修正】最新のZephyr 4.1に対応した MIPI-DBI 仮想バスの設定 ▼ */
+    mipi_dbi {
+        compatible = "zephyr,mipi-dbi-spi";
+        spi-dev = <&spi2>;
+        dc-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>; /* dc-gpiosはここが引き受けます */
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        st7789: st7789@0 {
+            compatible = "sitronix,st7789v";
+            reg = <0>;
+            mipi-max-frequency = <20000000>; /* 名前が変更されました */
+            width = <240>;
+            height = <280>;
+            reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
+            bl-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+            pwctrl1-param = [a4 a1];
+            porch-param = [0c 0c 00 33 33];
+            colmod = <0x05>;
+        };
+    };
 };
 
 &kscan0 {
@@ -67,34 +89,17 @@
     events = <0>;
 };
 
-/* ▼ 画面(SPI)の設定 ▼ */
+/* ▼【修正】SPI本体の設定（画面子ノードとdc-gpiosを上記へ分離しました） ▼ */
 &spi2 {
     status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    
     cs-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
-
-    st7789: st7789@0 {
-        compatible = "sitronix,st7789v";
-        status = "okay";
-        spi-max-frequency = <20000000>;
-        reg = <0>;
-        width = <240>;
-        height = <280>;
-        dc-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
-        reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
-        bl-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-        /* 以下のパラメータはドライバがコンパイルを通すために必要です */
-        pwctrl1-param = [a4 a1];
-        porch-param = [0c 0c 00 33 33];
-        colmod = <0x05>;
-    };
 };
 
-/* ▼ ピン定義 ▼ */
+/* ▼ ピン定義（ここはそのまま維持） ▼ */
 &pinctrl {
     spi2_default: spi2_default {
         group1 {
