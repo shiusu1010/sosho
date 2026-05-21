@@ -1,18 +1,12 @@
 #include "sosho_R.dtsi"
 
+/* 物理的な通信バス（SPI）を有効化 */
 &spi0 {
     status = "okay";
 };
 
+/* 物理的なトラックパッド（Glidepoint）の動作設定 */
 &glidepoint {
     status = "okay";
     invert-y;
-};
-
-/* センサーのデータをSplit（送信）チャネルに流し込みます */
-/* reg = <0> にすることで、ドングルの glidepoint_split@0 と完全に紐付きます */
-&glidepoint_split {
-    status = "okay";
-    device = <&glidepoint>;
-    reg = <0>;
 };
