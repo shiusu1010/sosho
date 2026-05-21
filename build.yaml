@@ -30,3 +30,4 @@ include:
   - board: xiao_ble/nrf52840/zmk
     shield: settings_reset
     artifact-name: settings_reset
+    
