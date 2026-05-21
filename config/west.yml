@@ -8,9 +8,6 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: shiusu1010
       url-base: https://github.com/shiusu1010
-    # ▼ 追加: Prospectorの配布元
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,9 +19,9 @@ manifest:
     - name: zmk-dongle-screen
       remote: shiusu1010
       revision: main
-    # ▼ 追加: Prospectorモジュール本体
+    # ▼ 追加：バグを修正したピースケさん専用のProspectorモジュールを読み込みます
     - name: prospector-zmk-module
-      remote: carrefinho
+      remote: shiusu1010
       revision: main
   self:
     path: config
