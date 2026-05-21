@@ -1,5 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/input_transform.h>
+/* ▼ 通信モードのマクロを読み込むためにこの1行を追加しました */
+#include <dt-bindings/mipi_dbi/mipi_dbi.h>
 #include "sosho.dtsi"
 
 / {
@@ -65,6 +67,10 @@
             compatible = "sitronix,st7789v";
             reg = <0>;
             mipi-max-frequency = <20000000>;
+            
+            /* ▼ 新しく要求された必須の通信モード設定を追加しました */
+            mipi-mode = <MIPI_DBI_MODE_SPI_4WIRE>;
+            
             width = <240>;
             height = <280>;
             x-offset = <0>;
@@ -75,11 +81,8 @@
             lcm = <0x2c>;
             gamma = <1>;
             cmd2en-param = [5a 69 02 b2];
-            
-            /* ▼ 新しく要求された必須のガンマ設定（正・負）をセットで追加しました */
             pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
             nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
-            
             ram-param = [00 f0];
             rgb-param = [cd 08 14];
             
