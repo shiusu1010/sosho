@@ -70,12 +70,13 @@
             x-offset = <0>;
             y-offset = <0>;
             vcom = <0x1c>;
-            
-            /* ▼ 最新ZMKで要求されるパラメータを先回りして一斉補給 */
             gctrl = <0x35>;
             mdac = <0x00>;
             lcm = <0x2c>;
-            gamset = <0x01>;
+            
+            /* ▼ gamset から 最新仕様の gamma に修正しました */
+            gamma = <1>;
+            
             ram-param = [00 f0];
             rgb-param = [cd 08 14];
             
