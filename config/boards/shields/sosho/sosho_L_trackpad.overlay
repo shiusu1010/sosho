@@ -1,11 +1,12 @@
 #include "sosho_L.dtsi"
 
-&spi0 { status = "okay"; };
+/* 物理的な通信バス（SPI）を有効化 */
+&spi0 {
+    status = "okay";
+};
+
+/* 物理的なトラックパッド（Glidepoint）の動作設定 */
 &glidepoint {
     status = "okay";
-    invert-x;
-};
-&glidepoint_split {
-    status = "okay";
-    device = <&glidepoint>;
+    invert-x; /* ピースケさんのお好みの設定（X軸反転）に合わせて残してあります */
 };

@@ -9,11 +9,3 @@
 &trackball {
     status = "okay";
 };
-
-/* ▼ 最新ZMK仕様：トラックボールの入力を電波に乗せるための翻訳機 ▼ */
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-    };
-};
