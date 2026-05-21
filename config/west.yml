@@ -18,6 +18,7 @@ manifest:
       revision: main
     - name: prospector-zmk-module
       remote: carrefinho
-      revision: main
+      # ▼ 最新ZMK(Zephyr 4.1)に対応した専用ブランチへと切り替えます！
+      revision: feat/new-status-screens
   self:
     path: config

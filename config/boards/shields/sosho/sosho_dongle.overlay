@@ -6,10 +6,9 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
-        /* displayの指定は prospector_adapter 側が自動で行うため、ここからは完全に削除しました */
     };
 
-    /* ▼ 左右からの入力受け取り設定（ここだけ残す） ▼ */
+    /* ▼ 左右からの入力受け取り設定 ▼ */
     split_inputs {
         compatible = "zmk,split-inputs";
         status = "okay";
