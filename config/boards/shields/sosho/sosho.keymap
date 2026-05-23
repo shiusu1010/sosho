@@ -177,7 +177,7 @@
         };
 
         layer_3 {
-            display-name = "System"; // ← ★ここに追加！（システム・Bluetoothレイヤー）
+            display-name = "Bluetooth"; // ← ★ここに追加！（システム・Bluetoothレイヤー）
             bindings = <
                 &trans &trans &trans &trans &trans &trans      &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4
                 &trans &trans &trans &trans &trans &trans      &trans  &trans        &trans        &trans        &trans         &out OUT_USB
