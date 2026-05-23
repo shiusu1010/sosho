@@ -1,16 +1,10 @@
 #include "sosho_L.dtsi"
 
-/* トラックパッド用のSPI0通信と物理センサーを有効化 */
-&spi0 {
-    status = "okay";
-};
-
+&spi0 { status = "okay"; };
 &glidepoint {
     status = "okay";
     invert-x;
 };
-
-/* 物理センサーのデータを、dtsiにある無線送信チャネル（reg=0）にカチッと接続してON！ */
 &glidepoint_split {
     status = "okay";
     device = <&glidepoint>;
