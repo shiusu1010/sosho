@@ -35,20 +35,3 @@ config SPI
     default y
 
 endif
-
-if SHIELD_SOSHO_DONGLE
-
-config ZMK_KEYBOARD_NAME
-    default "SOSHO Dongle"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-config ZMK_SPLIT
-    default y
-
-# 左右分割の2つ（左手・右手）を子機として繋ぐ設定
-config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 2
-
-endif
