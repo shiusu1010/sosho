@@ -145,7 +145,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Base"; // ← ★ここに追加！
             bindings = <
                 &kp ENTER    &kp Q   &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
                 &mt LCTRL SPACE  &kp A  &lt 4 S &kp D  &kp F &kp G     &kp H  &kp J  &kp K      &kp L    &kp SQT   &kp ENTER
@@ -157,7 +156,6 @@
         };
     
         layer_1 {
-            display-name = "Num"; // ← ★ここに追加！（数字・移動レイヤー）
             bindings = <
                 &kp GRAVE &kp N1  &kp N2  &kp UP  &kp N4  &kp N5       &kp N6    &kp KP_N5    &kp KP_N8   &kp N9    &kp N0 &kp BSPC
                 &trans  &trans &kp LEFT &kp DOWN &kp RIGHT &trans      &kp PG_UP &kp KP_N4  &kp KP_N2   &kp KP_N6   &trans &trans
@@ -167,7 +165,6 @@
         };
 
         layer_2 {
-            display-name = "Sym"; // ← ★ここに追加！（記号・マクロレイヤー）
             bindings = <
                 &kp DEL &kp P  &mkp MB4 &kp UP &mkp MB5 &kp LC(LS(T))    &kp EXCL  &kp N7  &kp N8  &kp N9 &kp RBKT   &kp BSPC
                 &kp M &kp H  &kp LEFT &kp DOWN &kp RIGHT &kp LC(W)       &kp MINUS &kp N4  &kp N5  &kp N6  &kp LBKT  &kp EQUAL
@@ -177,7 +174,6 @@
         };
 
         layer_3 {
-            display-name = "System"; // ← ★ここに追加！（システム・Bluetoothレイヤー）
             bindings = <
                 &trans &trans &trans &trans &trans &trans      &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4
                 &trans &trans &trans &trans &trans &trans      &trans  &trans        &trans        &trans        &trans         &out OUT_USB
@@ -187,7 +183,6 @@
         };
         // 修正箇所①：reservedを消して、すべて&trans（元のキーをそのまま通す）にする
         scroll {
-            display-name = "Scroll"; // ← ★ここに追加！（スクロールレイヤー）
             bindings = <
                 &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
