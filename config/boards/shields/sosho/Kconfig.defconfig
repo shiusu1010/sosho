@@ -6,8 +6,7 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT
     default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+# 【削除】右手を親機（CENTRAL）にする設定を消し去りました！
 
 config ZMK_POINTING
     default y
