@@ -1,15 +1,15 @@
 #include "sosho_R.dtsi"
 
 &spi0 {
-    status = "okay";
+    status = "disabled"; // 変更：SPI通信（通信線）の電源を完全にオフ
 };
 
 &glidepoint {
-    status = "okay";
+    status = "disabled"; // 変更：トラックパッド自体の電源を完全にオフ
     invert-y;
 };
 
 &glidepoint_split {
-    status = "okay";
+    status = "disabled"; // 変更：ドングルへポインタ情報を送る中継ノードをオフ
     device = <&glidepoint>;
 };
