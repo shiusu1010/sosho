@@ -14,3 +14,8 @@
     status = "okay";
     device = <&trackball>;
 };
+&left_encoder {
+    // 1回「カリッ」と回した時の信号の分割数です。
+    // 2ページずつ飛ぶなら「2」、もっと飛ぶなら「4」を試してください。
+    resolution = <2>; 
+};
