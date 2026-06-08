@@ -14,8 +14,3 @@
     status = "okay";
     device = <&trackball>;
 };
-&encoder {
-    // 1回「カリッ」と回した時の信号の分割数です。
-    // 行き過ぎる場合はここを「2」または「4」に設定します。
-    resolution = <2>; 
-};
