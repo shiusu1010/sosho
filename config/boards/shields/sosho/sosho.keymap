@@ -153,7 +153,7 @@
                 &kp GRAVE  &kp LALT     &lt 2 SPACE  &kp TAB           &kp LG(LS(S)) &mo 1      &mo 3     &kp LGUI
             >;
             //&msc_ec_lとrは、上のビヘイビアで作ったもの。
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &msc_ec_r SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP &msc_ec_r SCRL_UP SCRL_DOWN>;
         };
     
         layer_1 {
