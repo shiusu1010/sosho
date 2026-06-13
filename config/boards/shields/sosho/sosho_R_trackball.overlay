@@ -1,14 +1,14 @@
 #include "sosho_R.dtsi"
 
 &spi1 {
-    status = "okay";
+    status = "disabled"; // 変更：SPI通信（通信線）の電源を完全にオフ
 };
 
 &trackball {
-    status = "okay";
+    status = "disabled"; // 変更：トラックボールセンサー自体の電源を完全にオフ
 };
 
 &trackball_split {
-    status = "okay";
+    status = "disabled"; // 変更：ドングルへポインタ情報を送る中継ノードをオフ
     device = <&trackball>;
 };
