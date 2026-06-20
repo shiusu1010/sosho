@@ -162,7 +162,7 @@
                 &kp GRAVE &kp N1  &kp N2  &kp UP  &kp N4  &kp N5       &kp HOME   &kp F7  &kp F8  &kp F9  &kp N0 &kp BSPC
                 &trans  &trans &kp LEFT &kp DOWN &kp RIGHT &trans      &kp END    &kp F4  &kp F5  &kp F6   &kp F12 &kp ENTER
                 &trans    &trans &trans &trans &trans &trans           &kp  F10   &kp F1  &kp F2  &kp F3   &kp F11 &kp LSHFT
-                &trans    &trans               &trans &trans           &kp LA(LS(KP_NLCK))    &trans       &kp LBKT &kp RBKT
+                &trans    &trans               &trans &trans           &kp LA(LS(KP_NLCK))    &trans       &kp RBKT &kp NUHS
             >;
         };
 
